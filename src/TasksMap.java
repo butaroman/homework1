@@ -1,3 +1,8 @@
+import tasks.Task;
+import tasks.Task108;
+import tasks.Task325;
+import tasks.Task561;
+
 import java.util.HashMap;
 
 /**
