@@ -11,16 +11,11 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        HashMap<String, Task> map = new HashMap<>();
-
-        map.put("108", new Task108());
-        map.put("325", new Task325());
-        map.put("561", new Task561());
-
+        HashMap<String, Task> map = new TasksMap().create();
 
         boolean cont = true;
         while (cont) {
-            System.out.println("Введіть № задачі");
+            System.out.println("Введіть № задачі:");
             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
             String task = bufferedReader.readLine();
@@ -29,15 +24,18 @@ public class Main {
                 if (pair.getKey().equals(task)) pair.getValue().solution();
             }
 
-            System.out.println("Бажаєте продовжити? (y/n)");
-
-            BufferedReader buff = new BufferedReader(new InputStreamReader(System.in));
-
-             if (bufferedReader.readLine().equals("y")) {
-                cont = true;
-            } else cont = false;
+            System.out.println("\nБажаєте продовжити? (y/n)");
+            String answer;
+            while (true) {
+                answer = bufferedReader.readLine();
+                if (answer.equals("n")) {
+                    cont = false;
+                    break;
+                } else if (answer.equals("y")) {
+                    cont = true;
+                    break;
+                }
+            }
         }
     }
-
 }
-
