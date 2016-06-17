@@ -5,8 +5,9 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-/**
- * Created by Aska on 15.06.2016.
+/** The {@code tasks.Task325} class represents calculate of the task325.
+ * @author aska
+ * Created on 15.06.2016.
  */
 public class Task325 implements Task {
 
@@ -25,7 +26,7 @@ public class Task325 implements Task {
             System.err.println("Не вдається отримати вхідні дані.");
         }
 
-        ArrayList<Integer> arrayList = calc(n);
+        ArrayList<Integer> arrayList = findPrimeDividers(n);
         System.out.print("Відповідь: ");
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.print(arrayList.get(i));
@@ -38,7 +39,12 @@ public class Task325 implements Task {
     }
 
 
-    private ArrayList<Integer> calc(int n) {
+    /** This private method finds prime dividers of n.
+     * @param n incoming positive number
+     * @return {@code ArrayList<Integer>} collection of prime dividers
+     * @throws IllegalArgumentException if param n isn't positive
+     */
+    private ArrayList<Integer> findPrimeDividers(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
         }
@@ -49,6 +55,13 @@ public class Task325 implements Task {
         return result;
     }
 
+    /** This private method is for internal usage.
+     * Method checks whether number is prime
+     * @param n incoming positive number
+     * @return {@code true} if n is prime number, otherwise
+     * {@code false}
+     * @throws IllegalArgumentException if param isn't positive
+     */
     private boolean isPrime(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Метод не може отримувати від'ємне значення n.");

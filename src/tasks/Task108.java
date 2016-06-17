@@ -4,8 +4,9 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-/**
- * Created by Aska on 15.06.2016.
+/** The {@code tasks.Task108} class represents calculate of the task108.
+ * @author aska
+ * Created on 15.06.2016.
  */
 
 public class Task108 implements Task {
@@ -35,6 +36,11 @@ public class Task108 implements Task {
 
     }
 
+    /** This private method finds min number represented as 2^r that is greater than n
+     * @param n incoming positive number
+     * @return {@code int} number represented as 2^r that is greater than n
+     * @throws IllegalArgumentException if param n isn't positive
+     */
     private int calc(int n) {
         if (n < 0) {
             throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");

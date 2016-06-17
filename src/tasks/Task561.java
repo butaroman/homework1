@@ -10,14 +10,9 @@ import java.util.ArrayList;
  *
  * @author aska
  *         Created 15.06.2016.
- *         tasks.Task 561: Дано натуральное число n.
- *         Среди чисел 1, ...,
- *         n найти все такие, запись которых
- *         совпадает с последними цифрами
- *         записи их kвадрата
- *         (как, например, 6^2= 36, 25^2 = 625 и т. д.).
  */
 public class Task561 implements Task {
+
 
     @Override
     public void solution() {
@@ -35,7 +30,7 @@ public class Task561 implements Task {
         } catch (IOException e) {
             System.err.println("Не вдається отримати вхідні дані.");
         }
-        ArrayList<Integer> arrayList = calc(n);
+        ArrayList<Integer> arrayList = findNumbersFinishedWithSquareNumber(n);
         System.out.print("Відповідь: ");
         for (int i = 0; i < arrayList.size(); i++) {
             System.out.print(arrayList.get(i));
@@ -48,13 +43,13 @@ public class Task561 implements Task {
 
     }
 
-    /**
-     * This private method solves task 561.
-     *
+    /** This private method solves task 561.
      * @param n incoming positive number
+     * @return {@code ArrayList<Integer>} collection of elements with value matches
+     * the last digits of record of its square
      * @throws IllegalArgumentException if param isn't positive
      */
-    private ArrayList<Integer> calc(int n) {
+    private ArrayList<Integer> findNumbersFinishedWithSquareNumber(int n) {
         if (n <= 0) {
             throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
         }
@@ -70,10 +65,10 @@ public class Task561 implements Task {
 
     /**
      * This private method is for internal usage.
-     *
      * @param n incoming positive number
-     * @return true if record of param value matches
-     * the last digits of record of its square
+     * @return {@code true} if record of param value matches
+     * the last digits of record of its square, otherwise
+     * {@code false}
      * @throws IllegalArgumentException if param isn't positive
      */
     private boolean isFinishedWithSquareNumber(int n) {
@@ -81,7 +76,7 @@ public class Task561 implements Task {
             throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
         }
         String s = "" + (int) Math.pow(n, 2);
-        return (s.endsWith("" + n));
+        return s.endsWith("" + n);
     }
 
 }
