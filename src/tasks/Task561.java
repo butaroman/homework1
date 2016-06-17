@@ -1,10 +1,12 @@
+package tasks;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
 /**
- * The {@code Task561} class represents calculate of the task561.
+ * The {@code tasks.Task561} class represents calculate of the task561.
  *
  * @author aska
  *         Created 15.06.2016.

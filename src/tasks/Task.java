@@ -1,3 +1,5 @@
+package tasks;
+
 /**
  * Created by Aska on 16.06.2016.
  */
