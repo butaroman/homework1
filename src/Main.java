@@ -25,17 +25,21 @@ public class Main {
             for (Map.Entry<String, Task> pair : map.entrySet()) {
                 if (pair.getKey().equals(task)) pair.getValue().solution();
             }
+            if (!map.containsKey(task)) System.out.println("Немає такої задачі.");
 
             System.out.println("\nБажаєте продовжити? (y/n)");
             String answer;
             while (true) {
                 answer = bufferedReader.readLine();
-                if (answer.equals("n")) {
+                if (answer.equalsIgnoreCase("n")) {
                     cont = false;
                     break;
-                } else if (answer.equals("y")) {
+                } else if (answer.equalsIgnoreCase("y")) {
                     cont = true;
                     break;
+                }
+                else {
+                    System.out.println("Оберіть y(ТАК) або n(НІ):");
                 }
             }
         }

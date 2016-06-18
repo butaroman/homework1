@@ -38,6 +38,9 @@ import java.util.ArrayList;
     }
 
     ArrayList<Integer> calc(int n) {
+        if (n < 0) {
+            throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
+        }
         ArrayList<Integer> result = new ArrayList<Integer>();
         for (int num = 1; num <= n; num++) {
             if (isPrime(num) && gcd(num, n) == 1) {
