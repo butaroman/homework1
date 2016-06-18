@@ -15,15 +15,18 @@ public class Main {
 
         HashMap<String, Task> map = new TasksMap().create();
 
+        BufferedReader bufferedReader = new BufferedReader(
+                new InputStreamReader(System.in));
         boolean cont = true;
         while (cont) {
             System.out.println("Введіть № задачі:");
-            BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
             String task = bufferedReader.readLine();
 
             for (Map.Entry<String, Task> pair : map.entrySet()) {
-                if (pair.getKey().equals(task)) pair.getValue().solution();
+                if (pair.getKey().equals(task)) {
+                    pair.getValue().solution();
+                }
             }
 
             System.out.println("\nБажаєте продовжити? (y/n)");

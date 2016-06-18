@@ -14,8 +14,10 @@ public class Task108 implements Task {
     @Override
     public void solution() {
         System.out.println("Умова задачі №108: ");
-        System.out.println("Дано натуральное число n. Получить наименьшее число вида 2^r, превосходящее n. \n");
-        System.out.println("Введіть натуральне число n: ");
+        System.out.println("Дано натуральное число n. " +
+                "Получить наименьшее число вида 2^r," +
+                "превосходящее n. \n");
+        System.out.println("Введіть натуральне число n:");
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
@@ -36,7 +38,8 @@ public class Task108 implements Task {
 
     }
 
-    /** This private method finds min number represented as 2^r that is greater than n
+    /** This private method finds perform calculation.
+     * Finds min number represented as 2^r that is greater than n.
      * @param n incoming positive number
      * @return {@code int} number represented as 2^r that is greater than n
      * @throws IllegalArgumentException if param n isn't positive
@@ -51,7 +54,9 @@ public class Task108 implements Task {
             if (Math.pow(2, r) > n) {
                 result = r;
                 break;
-            } else r++;
+            } else {
+                r++;
+            }
         }
         return result;
     }
