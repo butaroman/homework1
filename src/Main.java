@@ -19,17 +19,19 @@ public class Main {
                 new InputStreamReader(System.in));
         boolean cont = true;
         while (cont) {
-            System.out.println("Введіть № задачі:");
+            System.out.println("Choose task number:");
 
-            String task = bufferedReader.readLine();
+            String taskNumber = bufferedReader.readLine();
 
             for (Map.Entry<String, Task> pair : map.entrySet()) {
-                if (pair.getKey().equals(task)) {
+                if (pair.getKey().equals(taskNumber)) {
+                    Task task = pair.getValue();
+                    task.printTask(task.getTaskNumber(), task.getTaskCondition());
                     pair.getValue().solution();
                 }
             }
 
-            System.out.println("\nБажаєте продовжити? (y/n)");
+            System.out.println("\nWant to continue? (y/n)");
             String answer;
             while (true) {
                 answer = bufferedReader.readLine();

@@ -1,11 +1,11 @@
-package com.softserve.edu;
-import tasks.Task;
+package tasks;
+import java.io.IOException;
 import java.util.Scanner;
 /**
  * @author Oleg
  * @version 1
  */
-public class Task243 implements  Task {
+public class Task243 extends Task {
 	/**
 	 * Number from IO.
 	 */
@@ -23,42 +23,32 @@ public class Task243 implements  Task {
 	public Task243() {
 		
 	}
-/**
- * @return number from IO.
- */
 
 
-	/**
-	 * Input data from keyboard.
-	 */
-	public final void readData() {
-		Scanner in = new Scanner(System.in);
-		System.out.println("Input positive  number");
-		try {
-			number = Integer.parseInt(in.next());
-		} catch (NumberFormatException e) {
-			System.out.println("Wrong number");
-		}
-		in.close();
-	}
-	/**
-	 * @param n  set new value to n.
-	 *
-	 */
-	
 	@Override
 	public void solution(){
-		readData();
+		try {
+			number = readPositiveNumber();
+		} catch (IOException e) {
+			return;
+		}
 		System.out.println("subtask a");
 		calculateA();
 		System.out.println("subtask b");
 		calculateB();
 	}
+
+	@Override
+	public String getTaskNumber() {
+		return "243";
+	}
+
+	@Override
+	public String getTaskCondition() {
+		return ":)"; //// TODO: 20.06.2016 translate task243 condition
+	}
 	
-	/*
-	 * private boolean isValid() { if (isSimple()&&(number%4==1)) return true;
-	 * else return false; }
-	 */
+
 /**
  * calculating subtask(a).
  * find one pair when x^2+y^2=n
