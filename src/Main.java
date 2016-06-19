@@ -23,12 +23,16 @@ public class Main {
 
             String taskNumber = bufferedReader.readLine().trim();
 
+            Task task = null;
             for (Map.Entry<String, Task> pair : map.entrySet()) {
                 if (pair.getKey().equals(taskNumber)) {
-                    Task task = pair.getValue();
+                     task = pair.getValue();
                     task.printTask(task.getTaskNumber(), task.getTaskCondition());
-                    pair.getValue().solution();
+                    System.out.println("Answer is: " + pair.getValue().solution());
                 }
+            }
+            if (task==null) {
+                System.out.println("Not found.");
             }
 
             System.out.println("\nWant to continue? (y/n)");

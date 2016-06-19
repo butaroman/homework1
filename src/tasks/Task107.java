@@ -33,7 +33,7 @@ public class Task107 extends Task {
 
     @Override
     public String getTaskCondition() {
-        return "find maximum k where 4^k<m";
+        return "Given whole m > 1. Find maximum k where 4^k < m";
     }
 
     /**

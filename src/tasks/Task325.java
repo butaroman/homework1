@@ -22,7 +22,7 @@ public class Task325 extends Task {
         }
 
         ArrayList<Integer> arrayList = findPrimeDividers(n);
-        return "answerToString(arrayList)";
+        return answerToString(arrayList);
     }
 
     @Override
@@ -32,7 +32,7 @@ public class Task325 extends Task {
 
     @Override
     public String getTaskCondition() {
-        return "Given a natural number n. Get all the prime divisors of this number.";
+        return "Given a positive number n. Get all the prime divisors of this number.";
     }
 
     /** This private method finds prime dividers of n.
@@ -80,7 +80,6 @@ public class Task325 extends Task {
      */
     private String answerToString(ArrayList<Integer> arrayList) {
         StringBuilder answer = new StringBuilder();
-        answer.append("Answer: ");
         for (int i = 0; i < arrayList.size(); i++) {
             answer.append(arrayList.get(i));
             if (i == arrayList.size() - 1) {

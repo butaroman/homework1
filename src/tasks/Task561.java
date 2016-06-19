@@ -86,7 +86,6 @@ public class Task561 extends Task {
      */
     private String answerToString(ArrayList<Integer> arrayList) {
         StringBuilder answer = new StringBuilder();
-        answer.append("Answer: ");
         for (int i = 0; i < arrayList.size(); i++) {
             answer.append(arrayList.get(i));
             if (i == arrayList.size() - 1) {
