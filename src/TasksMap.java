@@ -1,7 +1,6 @@
 import tasks.Task;
-import tasks.Task108;
-import tasks.Task325;
-import tasks.Task561;
+import tasks.*;
+
 
 import java.util.HashMap;
 
@@ -17,6 +16,9 @@ public class TasksMap {
         map.put("108", new Task108());
         map.put("325", new Task325());
         map.put("561", new Task561());
+        map.put("86a", new Task86a());
+        map.put("86b", new Task86b());
+        map.put("330", new Task330());
 
         return map;
     }
