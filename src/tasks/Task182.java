@@ -14,7 +14,7 @@ public class Task182 implements Task {
     @Override
     public void solution() {
         System.out.println("Task №182: ");
-        System.out.println("Find all pairs of friendly numbers within the following scope (200-300)\n");
+        System.out.println("Given a natural number of n, find sum of all numbers (a1....a(n)) divided by 5 and not divided by 7\n");
 
 
         int n = 0;
@@ -64,11 +64,13 @@ public class Task182 implements Task {
 
     }
 
-    private void fillInArrayWithNumbers(int number) {
+    private void fillInArrayWithNumbers(int scope) {
 
         int count=0;
 
-        while(count<number){
+        arrOfNumbs = new int[scope];
+
+        while(count<scope){
             arrOfNumbs[count++]=count;
         }
 
