@@ -15,6 +15,7 @@ public class TasksMap {
         map.put("325", new Task325());
         map.put("561", new Task561());
         map.put("324", new Task324());
+        map.put("560", new Task560());
 
         return map;
     }
