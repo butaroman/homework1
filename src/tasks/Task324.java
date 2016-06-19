@@ -16,7 +16,7 @@ public class Task324 implements Task {
 
     @Override
     public void solution() {
-        System.out.println("Task №323: ");
+        System.out.println("Task №324: ");
         System.out.println("Given a natural number n. Find all numbers less than n being mutually prime with n \n");
         System.out.println("Enter a natural number n: ");
 
