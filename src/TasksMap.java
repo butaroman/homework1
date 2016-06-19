@@ -12,6 +12,7 @@ public class TasksMap {
         map = new HashMap<>();
 
         map.put("108", new Task108());
+        map.put("182", new Task182());
         map.put("325", new Task325());
         map.put("561", new Task561());
         map.put("324", new Task324());
