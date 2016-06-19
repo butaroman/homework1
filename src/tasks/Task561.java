@@ -15,7 +15,7 @@ public class Task561 extends Task {
 
 
     @Override
-    public void solution() {
+    public String solution() {
         int n = 0;
         try {
             n = readPositiveNumber();
@@ -23,7 +23,7 @@ public class Task561 extends Task {
             System.err.println("Не вдається отримати вхідні дані.");
         }
         ArrayList<Integer> arrayList = findNumbersFinishedWithSquareNumber(n);
-        System.out.println(answerToString(arrayList));
+        return answerToString(arrayList);
     }
 
     @Override

@@ -21,7 +21,7 @@ public class Main {
         while (cont) {
             System.out.println("Choose task number:");
 
-            String taskNumber = bufferedReader.readLine();
+            String taskNumber = bufferedReader.readLine().trim();
 
             for (Map.Entry<String, Task> pair : map.entrySet()) {
                 if (pair.getKey().equals(taskNumber)) {

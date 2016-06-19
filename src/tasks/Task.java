@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * Created by Aska on 16.06.2016.
  */
 public abstract class Task {
-    public abstract void solution();
+    public abstract String solution();
     public void printTask(String taskNumber, String condition){
         System.out.println("Task №" + taskNumber +":\n"+
         condition);

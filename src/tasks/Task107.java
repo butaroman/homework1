@@ -17,13 +17,13 @@ public class Task107 extends Task {
     private int number;
 
     @Override
-    public void solution() {
+    public String solution() {
         try {
             number = readPositiveNumber();
         } catch (IOException e) {
-            return;
+            return "";
         }
-        calculate();
+        return "" + calculate();
     }
 
     @Override
@@ -39,12 +39,12 @@ public class Task107 extends Task {
     /**
      * find maximum k where 4^k<m.
      */
-    public final void calculate() {
+    public final String calculate() {
         int k = 0;
         while (Math.pow(BASE, k) < number) {
             k++;
         }
-        System.out.println("k = " + (k - 1));
+        return "k = " + (k - 1);
     }
 
 }

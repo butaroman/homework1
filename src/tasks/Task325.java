@@ -12,17 +12,17 @@ import java.util.ArrayList;
 public class Task325 extends Task {
 
     @Override
-    public void solution() {
+    public String solution() {
         int n = 0;
 
         try {
             n = readPositiveNumber();
         } catch (IOException e) {
-            return;
+            return "";
         }
 
         ArrayList<Integer> arrayList = findPrimeDividers(n);
-        System.out.println(answerToString(arrayList));
+        return "answerToString(arrayList)";
     }
 
     @Override

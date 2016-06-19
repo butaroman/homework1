@@ -12,12 +12,12 @@ import java.io.InputStreamReader;
 public class Task108 extends Task {
 
     @Override
-    public void solution() {
+    public String solution() {
         int n = 0;
         try {
             n = readPositiveNumber();
         } catch (IOException e) {
-            return;
+            return "";
         }
 
         int r = 0;
@@ -25,10 +25,9 @@ public class Task108 extends Task {
             r = calc(n);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-            return;
+            return "";
         }
-        System.out.println("Відповідь: 2^" + r + "=" + (int) Math.pow(2, r));
-
+        return "2^" + r + "=" + (int) Math.pow(2, r);
     }
 
     @Override
