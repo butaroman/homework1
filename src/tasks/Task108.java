@@ -11,28 +11,40 @@ import java.io.InputStreamReader;
  *         Created on 15.06.2016.
  */
 
-public class Task108 implements Task {
+public class Task108 extends Task {
 
     @Override
-    public void solution() {
-        Helper helper = new Helper();
-        helper.printTask("108", "Дано натуральное число n. \" +\n" +
-                "                \"Получить наименьшее число вида 2^r,\" +\n" +
-                "                \"превосходящее n.");
-        int n = helper.getIntInput();
+    public String solution() {
+        int n = 0;
+        try {
+            n = readPositiveNumber();
+        } catch (IOException e) {
+            return "";
+        }
 
         int r = 0;
         try {
             r = calc(n);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-            return;
+            return "";
         }
-        helper.printSolution("2^" + r + "=" + (int) Math.pow(2, r));
+        return "2^" + r + "=" + (int) Math.pow(2, r);
     }
 
-    /**
-     * This private method finds perform calculation.
+    @Override
+    public String getTaskNumber() {
+        return "108";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Given a natural number n. Get the smallest number represented as 2^r higher than n.";
+    }
+
+
+
+    /** This private method finds perform calculation.
      * Finds min number represented as 2^r that is greater than n.
      *
      * @param n incoming positive number
@@ -41,7 +53,7 @@ public class Task108 implements Task {
      */
     private int calc(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
+            throw new IllegalArgumentException("Invalid parameter, n must be positive.");
         }
         int r = 0;
         int result;

@@ -19,26 +19,33 @@ public class Main {
                 new InputStreamReader(System.in));
         boolean cont = true;
         while (cont) {
-            System.out.println("Введіть № задачі:");
+            System.out.println("Choose task number:");
 
-            String task = bufferedReader.readLine();
+            String taskNumber = bufferedReader.readLine().trim();
 
+            Task task = null;
             for (Map.Entry<String, Task> pair : map.entrySet()) {
-                if (pair.getKey().equals(task)) {
-                    pair.getValue().solution();
+                if (pair.getKey().equals(taskNumber)) {
+                     task = pair.getValue();
+                    task.printTask(task.getTaskNumber(), task.getTaskCondition());
+                    System.out.println("Answer is: " + pair.getValue().solution());
                 }
             }
+            if (task==null) System.out.println("Task not found.");
 
-            System.out.println("\nБажаєте продовжити? (y/n)");
+            System.out.println("\nWant to continue? (y/n)");
             String answer;
             while (true) {
                 answer = bufferedReader.readLine();
-                if (answer.equals("n")) {
+                if (answer.equalsIgnoreCase("n")) {
                     cont = false;
                     break;
-                } else if (answer.equals("y")) {
+                } else if (answer.equalsIgnoreCase("y")) {
                     cont = true;
                     break;
+                }
+                else {
+                    System.out.println("Type y(for YES) or n(for NO):");
                 }
             }
         }
