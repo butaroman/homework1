@@ -6,18 +6,14 @@ import java.util.List;
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
-public class Task560 implements Task {
+public class Task560 extends Task {
 
 
     private static final int START_FROM = 200;
     private static final int END_WITH = 300;
 
     @Override
-    public void solution() {
-
-        System.out.println("Task №560: ");
-        System.out.println("Find all pairs of friendly numbers within the following scope (200-300)\n");
-
+    public String solution() {
 
         String output = null;
         List<Integer> friendlyNumbersList = getAllFriendlyNumbers();
@@ -28,8 +24,18 @@ public class Task560 implements Task {
             output = getFormattedOutput(i, friendlyNumbersList, builder).toString();
         }
 
-        System.out.println(output);
+        return output;
 
+    }
+
+    @Override
+    public String getTaskNumber() {
+        return "560";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Find all pairs of friendly numbers within the following scope (200-300).";
     }
 
 

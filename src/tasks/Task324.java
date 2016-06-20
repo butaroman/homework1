@@ -9,25 +9,19 @@ import java.util.List;
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
-public class Task324 implements Task {
+public class Task324 extends Task {
 
 
     private int[] arr;
 
     @Override
-    public void solution() {
-        System.out.println("Task №324: ");
-        System.out.println("Given a natural number n. Find all numbers less than n being mutually prime with n \n");
-        System.out.println("Enter a natural number n: ");
-
+    public String solution() {
         int n = 0;
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
         try {
 
-            n = Integer.parseInt(bufferedReader.readLine());
+            n = readPositiveNumber();
         } catch (IOException e) {
-            System.err.println("No data can be retrieved");
+            return "";
         }
 
         String output = null;
@@ -39,8 +33,17 @@ public class Task324 implements Task {
             output = getFormattedOutput(i, allPrimeNumbers, builder).toString();
         }
 
-        System.out.println(output);
+        return output;
+    }
 
+    @Override
+    public String getTaskNumber() {
+        return "324";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Given a natural number n. Find all numbers less than n being mutually prime with n.";
     }
 
     private StringBuilder getFormattedOutput(int index, List<Integer> allPrimeNumbers, StringBuilder builder) {

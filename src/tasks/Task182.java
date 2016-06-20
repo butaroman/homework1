@@ -7,36 +7,38 @@ import java.io.InputStreamReader;
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
-public class Task182 implements Task {
+public class Task182 extends Task {
 
     private int[] arrOfNumbs;
 
     @Override
-    public void solution() {
-        System.out.println("Task №182: ");
-        System.out.println("Given a natural number of n, find sum of all numbers (a1....a(n)) divided by 5 and not divided by 7\n");
-
-
+    public String solution() {
         int n = 0;
-
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-
         try {
 
-            n = Integer.parseInt(bufferedReader.readLine());
+            n = readPositiveNumber();
         } catch (IOException e) {
-            System.err.println("No data can be retrieved");
-            return;
+            return "";
         }
 
         try {
             int sum = findSumOnConditionFor(n);
-            System.out.printf("sum: %d", sum);
+            return "" + sum;
 
         }catch(IllegalArgumentException e){
             System.out.println(e.getMessage()+"\n");
         }
+        return "";
+    }
 
+    @Override
+    public String getTaskNumber() {
+        return "182";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Given a natural number of n, find sum of all numbers (a1....a(n)) divided by 5 and not divided by 7.";
     }
 
     private int findSumOnConditionFor(int number) {
