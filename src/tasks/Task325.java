@@ -60,4 +60,16 @@ public class Task325 implements Task {
             }
         return true;
     }
+	@Override
+	public String getNumber() {
+		// TODO Auto-generated method stub
+		return "325";
+	}
+
+
+	@Override
+	public String getDiscription() {
+		// TODO Auto-generated method stub
+		return "Дано натуральное число n. Получить все простые делители этого числа \n";
+	}
 }

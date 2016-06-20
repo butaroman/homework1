@@ -83,6 +83,18 @@ public class Task561 implements Task {
         String s = "" + (int) Math.pow(n, 2);
         return (s.endsWith("" + n));
     }
+	
+	@Override
+	public String getNumber() {
+		
+		return "561";
+	}
+
+	@Override
+	public String getDiscription() {
+		return "Дано натуральное число n. Среди чисел 1, ...,n найти все такие, запись которых совпадает с последними цифрами записи их kвадрата (как, например, 6^2= 36, 25^2 = 625 и т. д.).";
+	}
+
 
 }
 

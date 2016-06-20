@@ -49,6 +49,17 @@ public class Task108 implements Task {
         }
         return result;
     }
+	@Override
+	public String getNumber() {
+		  
+		return "108";
+	}
+
+	@Override
+	public String getDiscription() {
+		return "Дано натуральное число n. Получить наименьшее число вида 2^r, превосходящее n. \n";
+	}
 }
+
 
 
