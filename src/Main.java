@@ -31,20 +31,21 @@ public class Main {
                     System.out.println("Answer is: " + pair.getValue().solution());
                 }
             }
-            if (task==null) {
-                System.out.println("Not found.");
-            }
+            if (!map.containsKey(task)) System.out.println("Task not found.");
 
             System.out.println("\nWant to continue? (y/n)");
             String answer;
             while (true) {
                 answer = bufferedReader.readLine();
-                if (answer.equals("n")) {
+                if (answer.equalsIgnoreCase("n")) {
                     cont = false;
                     break;
-                } else if (answer.equals("y")) {
+                } else if (answer.equalsIgnoreCase("y")) {
                     cont = true;
                     break;
+                }
+                else {
+                    System.out.println("Type y(YES) or n(NO):");
                 }
             }
         }
