@@ -65,19 +65,16 @@ public class Task88b extends Task {
         return number;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
 
-        Task88b task88b = (Task88b) o;
+        Task88b task88b = (Task88b) object;
 
-        return number == number;
+        if (number != task88b.number) return false;
 
+        return true;
     }
 
     @Override

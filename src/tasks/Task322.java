@@ -109,22 +109,17 @@ public class Task322 extends Task {
         return number;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) {
-            return true;
-        }
-        if (o == null || getClass() != o.getClass()) {
-            return false;
-        }
+    public boolean equals(Object object) {
+        if (this == object) return true;
+        if (object == null || getClass() != object.getClass()) return false;
+        if (!super.equals(object)) return false;
 
-        Task3 task3 = (Task3) o;
+        Task322 task322 = (Task322) object;
 
-        if (maxSumOfDivisors != maxSumOfDivisors) {
-            return false;
-        }
-        return number == number;
+        if (maxSumOfDivisors != task322.maxSumOfDivisors) return false;
+        if (number != task322.number) return false;
 
+        return true;
     }
 
     @Override
