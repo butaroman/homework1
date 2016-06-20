@@ -31,7 +31,7 @@ public class Main {
                     System.out.println("Answer is: " + pair.getValue().solution());
                 }
             }
-            if (!map.containsKey(task)) System.out.println("Task not found.");
+            if (task==null) System.out.println("Task not found.");
 
             System.out.println("\nWant to continue? (y/n)");
             String answer;
@@ -45,7 +45,7 @@ public class Main {
                     break;
                 }
                 else {
-                    System.out.println("Type y(YES) or n(NO):");
+                    System.out.println("Type y(for YES) or n(for NO):");
                 }
             }
         }

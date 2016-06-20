@@ -7,46 +7,50 @@ import java.io.InputStreamReader;
 /**
  * Created by nataliia on 18.06.16.
  */
-public class Task87 implements Task {
+public class Task87 extends Task {
 
     @Override
-    public void solution() {
-        System.out.println("Умова задачі №87: ");
-        System.out.println("Даны натуральное n, m. Получить сумму m последних цифр числа n. \n");
-        System.out.println("Введіть натуральне число n: ");
+    public String solution() {
 
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         int n = 0;
         try {
-            n = Integer.parseInt(bufferedReader.readLine());
+            n = readPositiveNumber("n");
         } catch (IOException e) {
-            System.err.println("Не вдається отримати вхідні дані.");
+            return "";
         }
-
-        System.out.println("Введіть натуральне число m: ");
         int m = 0;
         try {
-            m = Integer.parseInt(bufferedReader.readLine());
+            m = readPositiveNumber("m");
         } catch (IOException e) {
-            System.err.println("Не вдається отримати вхідні дані.");
+            return "";
         }
 
         int r = 0;
         try {
-            r = calc(n,m);
+            r = calc(n, m);
         } catch (IllegalArgumentException e) {
             System.out.println(e.getMessage());
-            return;
+            return "";
         }
-        System.out.println("Відповідь: Сума " + m + " останніх чисел числа " + n + " = " + calc(n,m));
+        return "The amount of " + m +" the last digits of number "+ n + " = " + r;
     }
 
-        int calc(int n, int m) {
+    @Override
+    public String getTaskNumber() {
+        return "87";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Given positive n and m. Find the sum of m last digits of n.";
+    }
+
+    int calc(int n, int m) {
         if (n < 0) {
-            throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
+            throw new IllegalArgumentException("Invalid parameter, n must be positive.");
         }
         if (m < 0) {
-            throw new IllegalArgumentException("Введіть коректне значення, m не може бути від'ємним.");
+            throw new IllegalArgumentException("Invalid parameter, m must be positive.");
         }
         int result = 0;
         for (int i = 0; i < m; i++) {

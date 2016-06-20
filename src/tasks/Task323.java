@@ -9,37 +9,34 @@ import java.util.ArrayList;
  * Created by nataliia on 18.06.16.
  */
 
-    public class Task323 implements Task {
+public class Task323 extends Task {
 
     @Override
-    public void solution() {
-        System.out.println("Умова задачі №323: ");
-        System.out.println("Дано натуральное число n. Получить все натуральные числа, меньшие n и взаимно простые с ним. \n");
-        System.out.println("Введіть натуральне число n: ");
-
-        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+    public String solution() {
         int n = 0;
         try {
-            n = Integer.parseInt(bufferedReader.readLine());
+            n = readPositiveNumber();
         } catch (IOException e) {
-            System.err.println("Не вдається отримати вхідні дані.");
+            return "";
         }
 
         ArrayList<Integer> arrayList = calc(n);
-        System.out.print("Відповідь: \nВзаємно прості числа, які менші числа " + n + ":\n");
-        for (int i = 0; i < arrayList.size(); i++) {
-            System.out.print(arrayList.get(i));
-            if (i == arrayList.size() - 1) {
-                System.out.println(".");
-            } else {
-                System.out.print(", ");
-            }
-        }
+        return answerToString(arrayList);
+    }
+
+    @Override
+    public String getTaskNumber() {
+        return "323";
+    }
+
+    @Override
+    public String getTaskCondition() {
+        return "Given a natural number n. Get all the natural numbers less than n and relatively prime to it.";
     }
 
     ArrayList<Integer> calc(int n) {
         if (n < 0) {
-            throw new IllegalArgumentException("Введіть коректне значення, n не може бути від'ємним.");
+            throw new IllegalArgumentException("Invalid parameter, n must be positive.");
         }
         ArrayList<Integer> result = new ArrayList<Integer>();
         for (int num = 1; num <= n; num++) {
@@ -70,5 +67,19 @@ import java.util.ArrayList;
         }
         return a;
     }
+
+    private String answerToString(ArrayList<Integer> arrayList) {
+        StringBuilder answer = new StringBuilder();
+        for (int i = 0; i < arrayList.size(); i++) {
+            answer.append(arrayList.get(i));
+            if (i == arrayList.size() - 1) {
+                answer.append(".");
+            } else {
+                answer.append(", ");
+            }
+        }
+        return answer.toString();
+    }
+
 }
 

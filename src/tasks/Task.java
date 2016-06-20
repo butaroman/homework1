@@ -9,15 +9,24 @@ import java.io.InputStreamReader;
  */
 public abstract class Task {
     public abstract String solution();
-    public void printTask(String taskNumber, String condition){
-        System.out.println("Task №" + taskNumber +":\n"+
-        condition);
-    };
+
+    public void printTask(String taskNumber, String condition) {
+        System.out.println("Task №" + taskNumber + ":\n" +
+                condition);
+    }
+
+    ;
+
     public abstract String getTaskNumber();
+
     public abstract String getTaskCondition();
 
     public int readPositiveNumber() throws IOException {
-        System.out.println("Enter positive number n:");
+        return readPositiveNumber("n");
+    }
+
+    public int readPositiveNumber(String variableName) throws IOException {
+        System.out.println("Enter positive number " + variableName + ":");
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 
