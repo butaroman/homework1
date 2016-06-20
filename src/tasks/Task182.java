@@ -1,14 +1,24 @@
 package tasks;
 
-import java.io.BufferedReader;
+
 import java.io.IOException;
-import java.io.InputStreamReader;
 
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
 public class Task182 extends Task {
 
+    /**
+     * first condition.
+     */
+    private static final int CONDITION_FIRST =5;
+    /**
+     * second condition.
+     */
+    private static final int CONDITION_SECOND = 7;
+    /**
+     * array of int numbers.
+     */
     private int[] arrOfNumbs;
 
     @Override
@@ -25,8 +35,8 @@ public class Task182 extends Task {
             int sum = findSumOnConditionFor(n);
             return "" + sum;
 
-        }catch(IllegalArgumentException e){
-            System.out.println(e.getMessage()+"\n");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage() + "\n");
         }
         return "";
     }
@@ -38,18 +48,27 @@ public class Task182 extends Task {
 
     @Override
     public String getTaskCondition() {
-        return "Given a natural number of n, find sum of all numbers (a1....a(n)) divided by 5 and not divided by 7.";
+        return "Given a natural number of n,"
+                + " find sum of all numbers (a1....a(n)) divided by 5 and not divided by 7.";
     }
 
+    /**
+     * fid sum of numbers matching the following condition:
+     * elem %5 == 0 && elem % 7 != 0
+     * where elem is a number within a predefined scope of numbers (1.....number).
+     * @param number a length of the array to be filled with numbers (1......number)
+     * @return sum of elements matching the following condition elem %5 == 0 && elem % 7 != 0
+     */
     private int findSumOnConditionFor(int number) {
 
-        int sum =0;
+        int sum = 0;
 
         fillArrayOfNumbers(number);
 
-        for(int i=0; i<arrOfNumbs.length; i++){
+        for (int i = 0; i < arrOfNumbs.length; i++) {
 
-            if(i % 5==0 && i % 7 !=0){
+
+            if (i % CONDITION_FIRST == 0 && i % CONDITION_SECOND != 0) {
                 sum += i;
             }
 
@@ -58,30 +77,47 @@ public class Task182 extends Task {
         return sum;
     }
 
+    /**
+     * this method checks the validity of an input parameter and calls fillInArrayWithNumbers
+     * to fill the array with numbers within a specified scope.
+     *
+     * @param number a length of the array to be filled with numbers (1......number)
+     * @see checkForValidBoundaries
+     * @see fillInArrayWithNumbers
+     */
     private void fillArrayOfNumbers(int number) {
 
-            checkForValidBoundaries(number);
+        checkForValidBoundaries(number);
 
-            fillInArrayWithNumbers(number);
+        fillInArrayWithNumbers(number);
 
     }
 
+    /**
+     * this method fills in the array of numbers with numbers within a valid scope.
+     *
+     * @param scope a positive number (scope > 0)
+     */
     private void fillInArrayWithNumbers(int scope) {
 
-        int count=0;
+        int count = 0;
 
         arrOfNumbs = new int[scope];
 
-        while(count<scope){
-            arrOfNumbs[count++]=count;
+        while (count < scope) {
+            arrOfNumbs[count++] = count;
         }
 
     }
 
-    private void checkForValidBoundaries(int number) {
-        if (number <= 0) {
+    /**
+     * this method check the validity of the input parameter.
+     * @param scope a positive number (scope > 0)
+     */
+    private void checkForValidBoundaries(int scope) {
+        if (scope <= 0) {
             throw new IllegalArgumentException("wrong array bounds specified: "
-                    + number);
+                    + scope);
         }
 
     }
