@@ -21,7 +21,7 @@ public class Main {
         while (cont) {
             System.out.println("Choose task number:");
 
-            String taskNumber = bufferedReader.readLine().trim();
+            String taskNumber = bufferedReader.readLine().replaceAll("\\W", "");
 
             Task task = null;
             for (Map.Entry<String, Task> pair : map.entrySet()) {
