@@ -10,22 +10,25 @@ import java.io.InputStreamReader;
 public class Task86a extends Task {
 
     @Override
-    public final String solution() {
+    public final String solution() throws IOException {
         int n = 0;
         try {
             n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
 
+        } catch (IOException e) {
+            throw e;
+        } catch (NumberFormatException e) {
+            throw e;
+        }
         int countLength = 0;
         try {
             countLength = countNumberLength(n);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+            throw e;
         }
 
         return "Natural number " + n + " includes " + countLength + " digits.";
+
     }
 
     @Override

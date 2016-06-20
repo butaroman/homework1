@@ -10,14 +10,10 @@ import java.io.InputStreamReader;
 public class Task87 extends Task {
 
     @Override
-    public String solution() {
+    public String solution() throws IOException {
 
-        int n = 0;
-        try {
-            n = readPositiveNumber("n");
-        } catch (IOException e) {
-            return "";
-        }
+        int n = readPositiveNumber("n");
+
         int m = 0;
         try {
             m = readPositiveNumber("m");

@@ -17,12 +17,8 @@ public class Task107 extends Task {
     private int number;
 
     @Override
-    public String solution() {
-        try {
-            number = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
+    public String solution() throws IOException {
+        number = readPositiveNumber();
         return "" + calculate();
     }
 

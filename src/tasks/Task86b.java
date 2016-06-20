@@ -28,7 +28,7 @@ public class Task86b extends Task {
         try {
             sum = addNumberSum(n);
         } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+                throw e;
         }
 
         return "Sum of the digits of a natural number " + n

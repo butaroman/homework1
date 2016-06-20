@@ -22,14 +22,9 @@ public class Task182 extends Task {
     private int[] arrOfNumbs;
 
     @Override
-    public String solution() {
-        int n = 0;
-        try {
+    public String solution() throws IOException {
 
-            n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
+          int n = readPositiveNumber();
 
         try {
             int sum = findSumOnConditionFor(n);

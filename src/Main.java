@@ -28,7 +28,11 @@ public class Main {
                 if (pair.getKey().equals(taskNumber)) {
                      task = pair.getValue();
                     task.printTask(task.getTaskNumber(), task.getTaskCondition());
-                    System.out.println("Answer is: " + pair.getValue().solution());
+                    try {
+                        System.out.println("Answer is: " + pair.getValue().solution());
+                    } catch (Exception e) {
+                        System.out.println(e.getMessage());
+                    }
                 }
             }
             if (task==null) System.out.println("Task not found.");

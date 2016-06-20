@@ -11,14 +11,9 @@ import java.util.ArrayList;
 public class Task559 extends Task{ // Mersenne prime
 
     @Override
-    public String solution() {
+    public String solution() throws IOException {
 
-        int n = 0;
-        try {
-            n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
+        int n = readPositiveNumber();
 
         ArrayList<Integer> arrayList = calc(n);
         return answerToString(arrayList);

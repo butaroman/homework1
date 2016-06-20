@@ -8,7 +8,7 @@ import java.io.InputStreamReader;
  * Created by Aska on 16.06.2016.
  */
 public abstract class Task {
-    public abstract String solution();
+    public abstract String solution() throws Exception;
 
     public void printTask(String taskNumber, String condition) {
         System.out.println("Task №" + taskNumber + ":\n" +
@@ -34,7 +34,10 @@ public abstract class Task {
         try {
             n = Integer.parseInt(bufferedReader.readLine());
         } catch (IOException e) {
-            System.err.println("Can't get input data.");
+            System.out.println("Can't get input data.");
+            throw e;
+        } catch (NumberFormatException e){
+            System.out.println("Non a number.");
             throw e;
         }
         return n;

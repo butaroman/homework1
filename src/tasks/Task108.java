@@ -14,14 +14,8 @@ import java.io.InputStreamReader;
 public class Task108 extends Task {
 
     @Override
-    public String solution() {
-        int n = 0;
-        try {
-            n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
-
+    public String solution() throws IOException {
+        int n = readPositiveNumber();
         int r = 0;
         try {
             r = calc(n);

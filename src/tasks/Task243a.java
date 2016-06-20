@@ -26,12 +26,9 @@ public class Task243a extends Task {
 
 
 	@Override
-	public String solution(){
-		try {
+	public String solution() throws IOException {
 			number = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
+
 		return "" + calculateA();
 	}
 

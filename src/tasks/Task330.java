@@ -11,13 +11,9 @@ import java.util.ArrayList;
 public class Task330 extends Task {
 
     @Override
-    public final String solution() {
-        int n = 0;
-        try {
-            n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
+    public final String solution() throws IOException {
+        int n = readPositiveNumber();
+
         ArrayList<Integer> perfectNumbersList = null;
         try {
             perfectNumbersList = findPerfectNumbers(n);

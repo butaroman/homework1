@@ -36,12 +36,8 @@ public class Task88b extends Task {
     }
 
     @Override
-    public String solution() {
-        try {
+    public String solution() throws IOException {
             number = readPositiveNumber();
-        } catch (IOException e) {
-            return "Input error!";
-        }
         return new StringBuilder(String.valueOf(number)).reverse().toString();
     }
 

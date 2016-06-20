@@ -43,13 +43,10 @@ public class Task88a extends Task {
 
 
     @Override
-    public String solution() {
+    public String solution() throws IOException {
 
-        try {
-            number = readPositiveNumber();
-        } catch (IOException e) {
-            return "Input Error!";
-        }
+        number = readPositiveNumber();
+
         if (isPresentThree()) {
             return "The number " + powN() + " contains the number 3";
         } else {
