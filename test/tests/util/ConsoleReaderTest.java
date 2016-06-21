@@ -40,6 +40,9 @@ public class ConsoleReaderTest {
         Assert.assertEquals("Hello"+separator, sysOutputString);
     }
 
+    /**
+     * this is a method that we need to test
+     */
     private void someVoidMethodToTest() {
         System.out.println("Hello");
     }
