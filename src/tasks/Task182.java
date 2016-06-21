@@ -94,6 +94,11 @@ public class Task182 extends AbstractTask {
     private void fillInArrayWithNumbers(int scope) {
 
         int count = 0;
+        arrOfNumbs = new int[scope];
+
+        while (count < scope) {
+            arrOfNumbs[count++] = count;
+        }
 
 	}
 

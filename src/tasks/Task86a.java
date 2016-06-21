@@ -13,15 +13,7 @@ public class Task86a extends AbstractTask {
 
 	@Override
 	public String solution() throws IOException {
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-
-		} catch (IOException e) {
-			throw e;
-		} catch (NumberFormatException e) {
-			throw e;
-		}
+		int	n = readPositiveNumber();
 		int countLength = 0;
 		try {
 			countLength = countNumberLength(n);
