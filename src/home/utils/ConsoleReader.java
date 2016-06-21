@@ -6,10 +6,9 @@ import java.io.PrintStream;
 
 /**
  * Created by nazar.dovhyy on 21.06.2016.
- *
+ * <p>
  * this code reconfigures the System.out so that it can save the output
  * into a String
- *
  */
 public class ConsoleReader {
 
@@ -21,7 +20,7 @@ public class ConsoleReader {
     /**
      *
      */
-    public ConsoleReader(){
+    public ConsoleReader() {
 
         os = new ByteArrayOutputStream();
         printStream = new PrintStream(os);
@@ -31,9 +30,10 @@ public class ConsoleReader {
 
     /**
      * capturing System.out as a String
+     *
      * @return
      */
-    public String captureSysOut(){
+    public String captureSysOut() {
 
         String sysOut = os.toString();
 
