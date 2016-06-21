@@ -15,6 +15,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
+		
         TreeMap<String, AbstractTask> map = new TreeMap<String, AbstractTask>(new TasksMap().getMap());
 
         System.out.println(map.keySet());
