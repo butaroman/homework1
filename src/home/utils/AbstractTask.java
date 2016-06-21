@@ -1,4 +1,6 @@
 package home.utils;
+
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -31,6 +33,9 @@ public abstract class AbstractTask {
         int n = 0;
         try {
             n = Integer.parseInt(bufferedReader.readLine());
+            if (n < 0){
+                throw new IllegalArgumentException("Invalid number, n must be positive");
+            }
         } catch (IOException e) {
             System.out.println("Can't get input data.");
             throw e;

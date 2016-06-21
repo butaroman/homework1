@@ -21,12 +21,8 @@ public class Task86b extends AbstractTask {
 
 		int n  = readPositiveNumber();
 
-		int sum = 0;
-		try {
-			sum = addNumberSum(n);
-		} catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
-		}
+		int sum = addNumberSum(n);
+
 
 		return "Sum of the digits of a natural number " + n + " = " + sum;
 	}
