@@ -30,7 +30,7 @@ public class ConsoleReaderTest {
     @Test
     public void testSysOut(){
 
-        someVoidMethod();
+        someVoidMethodToTest();
 
         String sysOutputString = consoleReader.captureSysOut();
 
@@ -40,7 +40,7 @@ public class ConsoleReaderTest {
         Assert.assertEquals("Hello"+separator, sysOutputString);
     }
 
-    private void someVoidMethod() {
+    private void someVoidMethodToTest() {
         System.out.println("Hello");
     }
 }
