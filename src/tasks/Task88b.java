@@ -1,5 +1,7 @@
 package tasks;
 
+import home.utils.AbstractTask;
+
 import java.io.IOException;
 
 /**
@@ -9,7 +11,7 @@ import java.io.IOException;
  * @author KarpenkoKO.
  * @version 1.0.
  */
-public class Task88b extends Task {
+public class Task88b extends AbstractTask {
 
     /**
      * @param number value from IO.

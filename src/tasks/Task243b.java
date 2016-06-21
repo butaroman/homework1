@@ -1,32 +1,37 @@
 package tasks;
+
 import java.io.IOException;
+
+import home.utils.AbstractTask;
 
 /**
  * @author Oleg
  * @version 1
  */
-public class Task243b extends Task {
+public class Task243b extends AbstractTask {
 	/**
 	 * Number from IO.
 	 */
 	private int number;
+
 	/**
 	 * @param n
-	 *Constructor with 1 int param.
+	 *            Constructor with 1 int param.
 	 */
 	public Task243b(final int n) {
 		this.number = n;
 	}
-	/**
-	 * Default constructor.
+	
+	/*
+	 * Defoult constructor
 	 */
 	public Task243b() {
-		
+		super();
 	}
 
 
-	@Override
 	public String solution() throws IOException {
+
 			number = readPositiveNumber();
 
 		return "" + calculateB();
@@ -39,14 +44,13 @@ public class Task243b extends Task {
 
 	@Override
 	public String getTaskCondition() {
-		return "Given a positive number n. Is it possible to represent it " +
-				"as a sum of two squares of integers? If possible, find all pairs when x^2+y^2=n, x >= y.";
+		return "Given a positive number n. Is it possible to represent it "
+				+ "as a sum of two squares of integers? If possible, find all pairs when x^2+y^2=n, x >= y.";
 	}
 
-/**
- * calculating subtask(b).
- * find all pairs when x^2+y^2=n, x >= y.
- */
+	/**
+	 * calculating subtask(b). find all pairs when x^2+y^2=n, x >= y.
+	 */
 	public final String calculateB() {
 		String result = "";
 		boolean valid = false;

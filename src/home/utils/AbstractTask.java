@@ -1,5 +1,4 @@
-package tasks;
-
+package home.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -7,15 +6,13 @@ import java.io.InputStreamReader;
 /**
  * Created by Aska on 16.06.2016.
  */
-public abstract class Task {
+public abstract class AbstractTask {
     public abstract String solution() throws Exception;
 
     public void printTask(String taskNumber, String condition) {
         System.out.println("Task №" + taskNumber + ":\n" +
                 condition);
     }
-
-    ;
 
     public abstract String getTaskNumber();
 

@@ -3,10 +3,12 @@ package tasks;
 
 import java.io.IOException;
 
+import home.utils.AbstractTask;
+
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
-public class Task182 extends Task {
+public class Task182 extends AbstractTask {
 
     /**
      * first condition.
@@ -26,20 +28,17 @@ public class Task182 extends Task {
 
           int n = readPositiveNumber();
 
-        try {
-            int sum = findSumOnConditionFor(n);
-            return "" + sum;
 
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage() + "\n");
-        }
-        return "";
+			int sum = findSumOnConditionFor(n);
+			return "" + sum;
+
     }
 
-    @Override
-    public String getTaskNumber() {
-        return "182";
-    }
+
+	@Override
+	public String getTaskNumber() {
+		return "182";
+	}
 
     @Override
     public String getTaskCondition() {
@@ -58,7 +57,7 @@ public class Task182 extends Task {
 
         int sum = 0;
 
-        fillArrayOfNumbers(number);
+		fillArrayOfNumbers(number);
 
         for (int i = 0; i < arrOfNumbs.length; i++) {
 
@@ -67,18 +66,16 @@ public class Task182 extends Task {
                 sum += i;
             }
 
-        }
+		}
 
-        return sum;
-    }
+		return sum;
+	}
 
     /**
      * this method checks the validity of an input parameter and calls fillInArrayWithNumbers
      * to fill the array with numbers within a specified scope.
      *
      * @param number a length of the array to be filled with numbers (1......number)
-     * @see checkForValidBoundaries
-     * @see fillInArrayWithNumbers
      */
     private void fillArrayOfNumbers(int number) {
 
@@ -86,7 +83,8 @@ public class Task182 extends Task {
 
         fillInArrayWithNumbers(number);
 
-    }
+
+	}
 
     /**
      * this method fills in the array of numbers with numbers within a valid scope.
@@ -97,13 +95,7 @@ public class Task182 extends Task {
 
         int count = 0;
 
-        arrOfNumbs = new int[scope];
-
-        while (count < scope) {
-            arrOfNumbs[count++] = count;
-        }
-
-    }
+	}
 
     /**
      * this method check the validity of the input parameter.
@@ -115,5 +107,5 @@ public class Task182 extends Task {
                     + scope);
         }
 
-    }
+	}
 }

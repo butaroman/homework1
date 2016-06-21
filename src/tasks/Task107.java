@@ -3,10 +3,12 @@ package tasks;
 import java.io.IOException;
 import java.util.Scanner;
 
+import home.utils.AbstractTask;
+
 /**
  * @author Oleg
- */
-public class Task107 extends Task {
+*/
+public class Task107 extends AbstractTask {
     /**
      * Base.
      */

@@ -1,3 +1,4 @@
+import home.utils.AbstractTask;
 import tasks.*;
 import java.util.HashMap;
 
@@ -5,9 +6,9 @@ import java.util.HashMap;
  * Created by Aska on 17.06.2016.
  */
 public class TasksMap {
-    private HashMap<String, Task> map;
+    private HashMap<String, AbstractTask> map;
 
-    public HashMap<String, Task> create(){
+    public HashMap<String, AbstractTask> create(){
         map = new HashMap<>();
 
         map.put("86a", new Task86a());

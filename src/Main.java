@@ -1,4 +1,4 @@
-import tasks.Task;
+import home.utils.AbstractTask;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,7 +13,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
 
-        HashMap<String, Task> map = new TasksMap().create();
+        HashMap<String, AbstractTask> map = new TasksMap().create();
 
         BufferedReader bufferedReader = new BufferedReader(
                 new InputStreamReader(System.in));
@@ -23,8 +23,8 @@ public class Main {
 
             String taskNumber = bufferedReader.readLine().replaceAll("\\W", "");
 
-            Task task = null;
-            for (Map.Entry<String, Task> pair : map.entrySet()) {
+            AbstractTask task = null;
+            for (Map.Entry<String, AbstractTask> pair : map.entrySet()) {
                 if (pair.getKey().equals(taskNumber)) {
                      task = pair.getValue();
                     task.printTask(task.getTaskNumber(), task.getTaskCondition());

@@ -4,10 +4,12 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import home.utils.AbstractTask;
+
 /**
  * Created by nataliia on 18.06.16.
  */
-public class Task87 extends Task {
+public class Task87 extends AbstractTask {
 
     @Override
     public String solution() throws IOException {

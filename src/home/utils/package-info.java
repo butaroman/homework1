@@ -1,3 +1,4 @@
+package home.utils;
 /**
  * @(#)Example.java 1.00 2014/07/08
  *
@@ -7,6 +8,6 @@
  */
 
 /**
- * Package for tasks.
+ * Package for training.
  */
-package tasks;
+

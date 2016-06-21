@@ -6,107 +6,107 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 
+import home.utils.AbstractTask;
+
 /**
  * Created by nazar.dovhyy on 20.06.2016.
  */
-public class Task324 extends Task {
+public class Task324 extends AbstractTask {
 
+	private int[] arr;
 
-    private int[] arr;
+	@Override
+	public String solution() {
+		int n = 0;
+		try {
 
-    @Override
-    public String solution() {
-        int n = 0;
-        try {
+			n = readPositiveNumber();
+		} catch (IOException e) {
+			return "";
+		}
 
-            n = readPositiveNumber();
-        } catch (IOException e) {
-            return "";
-        }
+		String output = null;
+		List<Integer> allPrimeNumbers = findAllPrimeNumbersFor(n);
+		StringBuilder builder = new StringBuilder();
 
-        String output = null;
-        List<Integer> allPrimeNumbers = findAllPrimeNumbersFor(n);
-        StringBuilder builder = new StringBuilder();
+		for (int i = 0; i < allPrimeNumbers.size(); i++) {
 
-        for (int i = 0; i < allPrimeNumbers.size(); i++) {
+			output = getFormattedOutput(i, allPrimeNumbers, builder).toString();
+		}
 
-            output = getFormattedOutput(i, allPrimeNumbers, builder).toString();
-        }
+		return output;
+	}
 
-        return output;
-    }
+	@Override
+	public String getTaskNumber() {
+		return "324";
+	}
 
-    @Override
-    public String getTaskNumber() {
-        return "324";
-    }
+	@Override
+	public String getTaskCondition() {
+		return "Given a natural number n. Find all numbers less than n being mutually prime with n.";
+	}
 
-    @Override
-    public String getTaskCondition() {
-        return "Given a natural number n. Find all numbers less than n being mutually prime with n.";
-    }
+	private StringBuilder getFormattedOutput(int index, List<Integer> allPrimeNumbers, StringBuilder builder) {
 
-    private StringBuilder getFormattedOutput(int index, List<Integer> allPrimeNumbers, StringBuilder builder) {
+		return (index < allPrimeNumbers.size() - 1) ? builder.append(allPrimeNumbers.get(index)).append(", ")
+				: builder.append(allPrimeNumbers.get(index)).append(".");
+	}
 
-        return (index < allPrimeNumbers.size() - 1) ? builder.append(allPrimeNumbers.get(index)).append(", ") : builder.append(allPrimeNumbers.get(index)).append(".");
-    }
+	private List<Integer> findAllPrimeNumbersFor(int number) {
 
-    private List<Integer> findAllPrimeNumbersFor(int number) {
+		fillArrayHolder(number);
 
-        fillArrayHolder(number);
+		return primeNumbersForN(number);
+	}
 
+	private List<Integer> primeNumbersForN(int number) {
 
-        return primeNumbersForN(number);
-    }
+		List<Integer> primeNumbers = new ArrayList<>();
 
-    private List<Integer> primeNumbersForN(int number) {
+		for (int i = number; i < number + 1; i++) {
 
-        List<Integer> primeNumbers = new ArrayList<>();
+			for (int j = 0; j < arr.length; j++) {
 
-        for (int i = number; i < number + 1; i++) {
+				if (retPrimeNumber(i, arr[j]) == 1) {
 
-            for (int j = 0; j < arr.length; j++) {
+					primeNumbers.add(arr[j]);
+				}
 
+			}
+		}
 
-                if (retPrimeNumber(i, arr[j]) == 1) {
+		return primeNumbers;
+	}
 
-                    primeNumbers.add(arr[j]);
-                }
+	private int retPrimeNumber(int firstNum, int secNum) {
 
-            }
-        }
+		if (firstNum % secNum == 0) {
+			return secNum;
+		}
 
-        return primeNumbers;
-    }
+		return retPrimeNumber(secNum, firstNum % secNum);
+	}
 
-    private int retPrimeNumber(int firstNum, int secNum) {
+	private void fillArrayHolder(int number) {
 
-        if (firstNum % secNum == 0) {
-            return secNum;
-        }
+		if (number < 1) {
+			throw new IllegalArgumentException("the input number must be larger than 0");
+		}
 
-        return retPrimeNumber(secNum, firstNum % secNum);
-    }
+		arr = new int[number - 1];
 
-    private void fillArrayHolder(int number) {
+		fillArrayHolderWithNumbers(number - 1);
 
-        if (number < 1) {
-            throw new IllegalArgumentException("the input number must be larger than 0");
-        }
+	}
 
-        arr = new int[number - 1];
+	private void fillArrayHolderWithNumbers(int number) {
 
-        fillArrayHolderWithNumbers(number - 1);
+		int count = 0;
 
-    }
+		while (count < number) {
+			arr[count++] = count;
+		}
 
-    private void fillArrayHolderWithNumbers(int number) {
-
-        int count = 0;
-
-        while (count < number) {
-            arr[count++] = count;
-        }
-
-    }
+	}
 }
