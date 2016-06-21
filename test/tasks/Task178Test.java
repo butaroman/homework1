@@ -1,3 +1,5 @@
+package tasks;
+
 import home.utils.ConsoleReader;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
