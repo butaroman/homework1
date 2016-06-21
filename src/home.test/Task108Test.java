@@ -19,12 +19,10 @@ import static org.junit.Assert.*;
  */
 public class Task108Test {
     static Task108 task;
-    static PrintStream out;
 
     @Before
     public void beforeTest() {
         task = new Task108();
-
     }
 
 
