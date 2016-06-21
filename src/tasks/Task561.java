@@ -45,7 +45,7 @@ public class Task561 extends AbstractTask {
 	 * @throws IllegalArgumentException
 	 *             if param isn't positive
 	 */
-	private ArrayList<Integer> findNumbersFinishedWithSquareNumber(int n) {
+	public ArrayList<Integer> findNumbersFinishedWithSquareNumber(int n) {
 		if (n <= 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}
@@ -69,7 +69,7 @@ public class Task561 extends AbstractTask {
 	 * @throws IllegalArgumentException
 	 *             if param isn't positive
 	 */
-	private boolean isFinishedWithSquareNumber(int n) {
+	public boolean isFinishedWithSquareNumber(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}
@@ -86,7 +86,7 @@ public class Task561 extends AbstractTask {
 	 *            converted into String
 	 * @return {@code String} readable answer
 	 */
-	private String answerToString(ArrayList<Integer> arrayList) {
+	public String answerToString(ArrayList<Integer> arrayList) {
 		StringBuilder answer = new StringBuilder();
 		for (int i = 0; i < arrayList.size(); i++) {
 			answer.append(arrayList.get(i));
