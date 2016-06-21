@@ -14,9 +14,9 @@ import java.io.PrintStream;
 public class ConsoleReader {
 
 
-    private OutputStream os;
-    private PrintStream printStream;
-    private PrintStream originalOut = System.out;
+    private final OutputStream os;
+    private final PrintStream printStream;
+    private final PrintStream originalOut = System.out;
 
     /**
      *
