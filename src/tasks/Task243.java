@@ -1,4 +1,4 @@
-package com.softserve.edu;
+package tasks;
 import tasks.Task;
 import java.util.Scanner;
 /**
