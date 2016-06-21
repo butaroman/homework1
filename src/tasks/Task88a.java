@@ -40,7 +40,8 @@ public class Task88a extends AbstractTask {
      * @return boolean value.
      */
     public boolean isPresentThree() {
-        return Arrays.asList(String.valueOf(powN()).split("")).contains("3");
+        return Arrays.asList(String.valueOf(powN())
+                .split("")).contains("3");
     }
 
 

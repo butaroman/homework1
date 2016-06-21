@@ -16,12 +16,8 @@ public class Task87 extends AbstractTask {
 
         int n = readPositiveNumber("n");
 
-        int m = 0;
-        try {
-            m = readPositiveNumber("m");
-        } catch (IOException e) {
-            return "";
-        }
+        int m = readPositiveNumber("m");
+
 
         int r = 0;
         try {
