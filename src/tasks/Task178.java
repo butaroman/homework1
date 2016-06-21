@@ -1,9 +1,9 @@
-package my.homework.tasks;
+package tasks;
 
 import java.util.Random;
 import java.util.Scanner;
 
-import my.homework.start.Task;
+import home.utils.AbstractTask;
 
 /**
  * This class is resolving my first task in book,task number is 178.
@@ -11,22 +11,22 @@ import my.homework.start.Task;
  * @author cavayman
  *
  */
-public class Task178 implements Task{
+public class Task178 extends AbstractTask {
+
 	// variables
 	private static Random rand = new Random();
 	private static int[] mas;
-    private static Scanner scan = new Scanner(System.in);
+	private static Scanner scan = new Scanner(System.in);
 	private static int firstCounter = 0;
 	private static int secondCounter = 0;
 
-	
 	/**
-	 *Main method that fills massive and scanns that user enters.
+	 * Main method that fills massive and scanns that user enters.
 	 * 
 	 * @param args
 	 *            Default parameter.
 	 */
-	public void solution() {
+	public String solution() {
 		System.out.println("Enter quantity of numbers in massive:");
 		int sizeOfMassive = scan.nextInt();
 		mas = new int[sizeOfMassive];
@@ -48,6 +48,7 @@ public class Task178 implements Task{
 			second(mas, i);
 		}
 		System.out.println("SecondCounter=" + secondCounter);
+		return "Це відповіді на Г та Д завдання";
 
 	}
 
@@ -62,11 +63,9 @@ public class Task178 implements Task{
 		System.out.print(" ");
 		if (iterationCount > 0) {
 			if (iterationCount < temp.length - 1) {
-				if (temp[iterationCount] 
-						< ((temp[iterationCount - 1] + temp[iterationCount + 1])
-								/ 2)) {
-							System.out.print(temp[iterationCount] + " ");
-							firstCounter++;
+				if (temp[iterationCount] < ((temp[iterationCount - 1] + temp[iterationCount + 1]) / 2)) {
+					System.out.print(temp[iterationCount] + " ");
+					firstCounter++;
 				}
 			}
 		}
@@ -85,37 +84,33 @@ public class Task178 implements Task{
 			if (iterationCount < temp.length - 1) {
 				if ((Math.pow(2, iterationCount) < temp[iterationCount])
 						&& (temp[iterationCount] < fact(iterationCount))) {
-							System.out.print(temp[iterationCount] + " ");
-							secondCounter++;
+					System.out.print(temp[iterationCount] + " ");
+					secondCounter++;
 				}
 			}
 		}
-  }
+	}
 
 	/**
 	 * Method for factorial
 	 * 
 	 * @param num
 	 *            param from which you whant get factorial.
-	 * @return 
-	 * 				an factorial number.
+	 * @return an factorial number.
 	 */
 	public static int fact(int num) {
 		return (num == 0) ? 1 : num * fact(num - 1);
 	}
 
-	
-
 	@Override
-	public String getNumber() {
+	public String getTaskNumber() {
 		// TODO Auto-generated method stub
 		return "178";
 	}
 
 	@Override
-	public String getDiscription() {
+	public String getTaskCondition() {
 		// TODO Auto-generated method stub
 		return "Даны натуральные числа n,a1,...,an.\n Определить количесво членов Ak последовательности.";
 	}
-
 }
