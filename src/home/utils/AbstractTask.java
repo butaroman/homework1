@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
  * Created by Aska on 16.06.2016.
  */
 public abstract class AbstractTask {
+
     public abstract String solution() throws Exception;
 
     public void printTask(String taskNumber, String condition) {
