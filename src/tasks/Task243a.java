@@ -16,8 +16,7 @@ public class Task243a extends AbstractTask {
 	private int number;
 
 	/**
-	 * @param n
-	 *            Constructor with 1 int param.
+	 * @param n Constructor with 1 int param.
 	 */
 	
 	public Task243a(final int n) {
