@@ -20,7 +20,7 @@ public class Main {
 		System.out.println(map.keySet());
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
 		boolean cont = true;
-			while (true) {
+			while (cont) {
 				System.out.println("Choose task number:");
 				String taskNumber = bufferedReader.readLine().replaceAll("\\W", "");
 				try{
