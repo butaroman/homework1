@@ -14,24 +14,18 @@ import home.utils.AbstractTask;
 
 public class Task108 extends AbstractTask {
 
-	@Override
-	public String solution() {
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
-
-		int r = 0;
-		try {
-			r = calc(n);
-		} catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
-			return "";
-		}
-		return "2^" + r + "=" + (int) Math.pow(2, r);
-	}
+    @Override
+    public String solution() throws IOException {
+        int n = readPositiveNumber();
+        int r = 0;
+        try {
+            r = calc(n);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+            return "";
+        }
+        return "2^" + r + "=" + (int) Math.pow(2, r);
+    }
 
 	@Override
 	public String getTaskNumber() {

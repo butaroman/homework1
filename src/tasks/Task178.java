@@ -22,9 +22,6 @@ public class Task178 extends AbstractTask {
 
 	/**
 	 * Main method that fills massive and scanns that user enters.
-	 * 
-	 * @param args
-	 *            Default parameter.
 	 */
 	public String solution() {
 		System.out.println("Enter quantity of numbers in massive:");

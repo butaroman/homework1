@@ -7,14 +7,12 @@ import java.io.InputStreamReader;
  * Created by Aska on 16.06.2016.
  */
 public abstract class AbstractTask {
-    public abstract String solution();
+    public abstract String solution() throws Exception;
 
     public void printTask(String taskNumber, String condition) {
         System.out.println("Task №" + taskNumber + ":\n" +
                 condition);
     }
-
-    ;
 
     public abstract String getTaskNumber();
 
@@ -32,8 +30,14 @@ public abstract class AbstractTask {
         int n = 0;
         try {
             n = Integer.parseInt(bufferedReader.readLine());
+            if (n < 0){
+                throw new IllegalArgumentException("Invalid number, n must be positive");
+            }
         } catch (IOException e) {
-            System.err.println("Can't get input data.");
+            System.out.println("Can't get input data.");
+            throw e;
+        } catch (NumberFormatException e){
+            System.out.println("Non a number.");
             throw e;
         }
         return n;

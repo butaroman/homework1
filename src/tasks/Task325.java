@@ -14,15 +14,11 @@ import home.utils.AbstractTask;
  */
 public class Task325 extends AbstractTask {
 
-	@Override
-	public String solution() {
-		int n = 0;
 
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
+    @Override
+    public String solution() throws IOException {
+        int n = readPositiveNumber();
+
 
 		ArrayList<Integer> arrayList = findPrimeDividers(n);
 		return answerToString(arrayList);

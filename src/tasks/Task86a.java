@@ -12,22 +12,17 @@ import home.utils.AbstractTask;
 public class Task86a extends AbstractTask {
 
 	@Override
-	public final String solution() {
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
-
+	public String solution() throws IOException {
+		int	n = readPositiveNumber();
 		int countLength = 0;
 		try {
 			countLength = countNumberLength(n);
 		} catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
+			throw e;
 		}
 
 		return "Natural number " + n + " includes " + countLength + " digits.";
+
 	}
 
 	@Override
@@ -41,8 +36,7 @@ public class Task86a extends AbstractTask {
 	}
 
 	/**
-	 * @param n
-	 *            natural number (must be grater than 0)
+	 * @param n natural number (must be grater than 0)
 	 * @return count of digits
 	 */
 	private int countNumberLength(final int n) {

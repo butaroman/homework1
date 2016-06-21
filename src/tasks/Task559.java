@@ -12,15 +12,10 @@ import home.utils.AbstractTask;
  */
 public class Task559 extends AbstractTask { // Mersenne prime
 
-	@Override
-	public String solution() {
+    @Override
+    public String solution() throws IOException {
 
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
+        int n = readPositiveNumber();
 
 		ArrayList<Integer> arrayList = calc(n);
 		return answerToString(arrayList);

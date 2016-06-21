@@ -46,7 +46,7 @@ public class TasksMap {
 		return map;
 	}
 
-	public void runTask(String number) {
+	public void runTask(String number) throws Exception {
 		AbstractTask temp = map.get(number);
 		temp.solution();
 	}

@@ -12,23 +12,19 @@ import home.utils.AbstractTask;
  */
 public class Task330 extends AbstractTask {
 
-	@Override
-	public final String solution() {
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			return "";
-		}
-		ArrayList<Integer> perfectNumbersList = null;
-		try {
-			perfectNumbersList = findPerfectNumbers(n);
-		} catch (IllegalArgumentException e) {
-			System.out.println(e.getMessage());
-		}
-		return "Perfect numbers less than " + n + " :" + perfectNumbersList;
-	}
+    @Override
+    public final String solution() throws IOException {
+        int n = readPositiveNumber();
 
+        ArrayList<Integer> perfectNumbersList = null;
+        try {
+            perfectNumbersList = findPerfectNumbers(n);
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+        return "Perfect numbers less than " + n + " :"
+                + perfectNumbersList;
+    }
 	@Override
 	public String getTaskNumber() {
 		return "330";

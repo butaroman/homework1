@@ -14,17 +14,14 @@ import home.utils.AbstractTask;
  */
 public class Task561 extends AbstractTask {
 
-	@Override
-	public String solution() {
-		int n = 0;
-		try {
-			n = readPositiveNumber();
-		} catch (IOException e) {
-			System.err.println("Не вдається отримати вхідні дані.");
-		}
-		ArrayList<Integer> arrayList = findNumbersFinishedWithSquareNumber(n);
-		return answerToString(arrayList);
-	}
+    @Override
+    public String solution() throws IOException {
+        int n = readPositiveNumber();
+
+        ArrayList<Integer> arrayList = findNumbersFinishedWithSquareNumber(n);
+        return answerToString(arrayList);
+    }
+
 
 	@Override
 	public String getTaskNumber() {

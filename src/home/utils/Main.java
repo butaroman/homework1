@@ -13,39 +13,51 @@ import java.util.TreeMap;
  */
 public class Main {
 
-	public static void main(String[] args) throws IOException {
+    public static void main(String[] args) throws IOException {
 
-		TreeMap<String, AbstractTask> map = new TreeMap<String,AbstractTask>( new TasksMap().getMap());
-		
-		System.out.println(map.keySet());
-		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-		boolean cont = true;
-			while (true) {
-				System.out.println("Choose task number:");
-				String taskNumber = bufferedReader.readLine().trim();
-				try{
-					AbstractTask temp = map.get(taskNumber);
-	
-				System.out.println("Answer is: " + temp.solution());
-				System.out.println(temp.getTaskCondition());
-				}catch(NullPointerException e){
-					System.out.println("Enter other value"); //If user entered number that isnt in HashMap
-				}
-				System.out.println("\nWant to continue? (y/n)");
-				String answer;
-					while (true) {
-						answer = bufferedReader.readLine();
-						if (answer.equalsIgnoreCase("n")) {
-							cont = false;
-							break;
-						} else if (answer.equalsIgnoreCase("y")) {
-							cont = true;
-							break;
-						} else {
-							System.out.println("Type y(for YES) or n(for NO):");
-						}
-					}
-	
-			}
-	}
+        TreeMap<String, AbstractTask> map = new TreeMap<String, AbstractTask>(new TasksMap().getMap());
+
+        System.out.println(map.keySet());
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
+        boolean cont = true;
+        while (cont) {
+            System.out.println("Choose task number:");
+            String taskNumber = bufferedReader.readLine().replaceAll("\\W", "");
+            AbstractTask currentTask = null;
+            try {
+                currentTask = map.get(taskNumber);
+                if (currentTask == null) {
+                    System.out.println("Task not found.");
+                } else {
+                    System.out.println(currentTask.getTaskCondition());
+                    System.out.println("Answer is: " + currentTask.solution());
+                }
+            } catch (IllegalArgumentException e) {
+                System.out.println(e.getMessage());
+                try {
+                    System.out.println("Answer is: " + currentTask.solution());
+                } catch (Exception ex) {
+                    System.out.println(ex.getMessage());
+                }
+            } catch (Exception exc) {
+                System.out.println(exc.getMessage());
+            }
+
+            System.out.println("\nWant to continue? (y/n)");
+            String answer;
+            while (true) {
+                answer = bufferedReader.readLine();
+                if (answer.equalsIgnoreCase("n")) {
+                    cont = false;
+                    break;
+                } else if (answer.equalsIgnoreCase("y")) {
+                    cont = true;
+                    break;
+                } else {
+                    System.out.println("Type y(for YES) or n(for NO):");
+                }
+            }
+
+        }
+    }
 }
