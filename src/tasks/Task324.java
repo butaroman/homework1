@@ -112,7 +112,7 @@ public class Task324 extends AbstractTask {
                 throw new IllegalArgumentException("the input number must be larger than 0");
             }
 
-            return arr == null ? fillArrayHolderWithNumbers(number - 1) : Arrays.copyOf(arr, arr.length);
+            return fillArrayHolderWithNumbers(number - 1);
 
         }
 
