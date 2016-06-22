@@ -1,3 +1,5 @@
+package util;
+
 import home.utils.ConsoleReader;
 import org.junit.Assert;
 import org.junit.Test;

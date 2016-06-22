@@ -32,7 +32,7 @@ public class Task323 extends AbstractTask {
 		return "Given a natural number n. Get all the natural numbers less than n and relatively prime to it.";
 	}
 
-	ArrayList<Integer> calc(int n) {
+	public ArrayList<Integer> calc(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}

@@ -4,7 +4,7 @@ import tasks.Task207;
 import tasks.Task593;
 
 
-public class TestForTask207 {
+public class Task207Test {
 	Task207 task = new Task207();
 	@org.junit.Test
 	public void testForFormatter() {

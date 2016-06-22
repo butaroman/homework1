@@ -1,6 +1,7 @@
-package tasks;
 
 import org.junit.*;
+import tasks.Task88a;
+import tasks.Task88b;
 
 import java.io.ByteArrayInputStream;
 

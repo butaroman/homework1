@@ -33,7 +33,7 @@ public class Task559 extends AbstractTask { // Mersenne prime
 				+ "where p - is also a prime number.";
 	}
 
-	ArrayList<Integer> calc(int n) {
+	public ArrayList<Integer> calc(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}
