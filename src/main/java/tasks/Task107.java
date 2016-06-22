@@ -1,8 +1,6 @@
 package tasks;
 
 import java.io.IOException;
-import java.util.Scanner;
-
 import home.utils.AbstractTask;
 
 /**

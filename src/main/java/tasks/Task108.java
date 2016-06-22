@@ -1,9 +1,6 @@
 package tasks;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 import home.utils.AbstractTask;
 
 /**
@@ -47,7 +44,7 @@ public class Task108 extends AbstractTask {
 	 * @throws IllegalArgumentException
 	 *             if param n isn't positive
 	 */
-	private int calc(int n) {
+	public int calc(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}

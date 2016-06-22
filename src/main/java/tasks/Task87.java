@@ -1,9 +1,6 @@
 package tasks;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 import home.utils.AbstractTask;
 
 /**
@@ -39,7 +36,7 @@ public class Task87 extends AbstractTask {
         return "Given positive n and m. Find the sum of m last digits of n.";
     }
 
-    int calc(int n, int m) {
+    public int calc(int n, int m) {
         if (n < 0) {
             throw new IllegalArgumentException("Invalid parameter, n must be positive.");
         }

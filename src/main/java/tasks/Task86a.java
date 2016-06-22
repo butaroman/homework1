@@ -1,9 +1,6 @@
 package tasks;
 
-import java.io.BufferedReader;
 import java.io.IOException;
-import java.io.InputStreamReader;
-
 import home.utils.AbstractTask;
 
 /**
@@ -11,9 +8,10 @@ import home.utils.AbstractTask;
  */
 public class Task86a extends AbstractTask {
 
+
 	@Override
 	public String solution() throws IOException {
-		int	n = readPositiveNumber();
+		int n = readPositiveNumber();
 		int countLength = 0;
 		try {
 			countLength = countNumberLength(n);
@@ -39,7 +37,7 @@ public class Task86a extends AbstractTask {
 	 * @param n natural number (must be grater than 0)
 	 * @return count of digits
 	 */
-	private int countNumberLength(final int n) {
+	public int countNumberLength(final int n) {
 		if (n <= 0) {
 			throw new IllegalArgumentException("n must be greater than 0.");
 		}
