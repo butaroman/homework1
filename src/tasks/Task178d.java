@@ -69,7 +69,6 @@ public class Task178d extends AbstractTask {
 
     @Override
     public String getTaskCondition() {
-        return "\"Given massive of numbers with size n,a1...an.Write count of numbers Ak  from  sequence that are satisfying.\\n\" +\n" +
-                "                \"D) 2^k<Ak<K!";
+        return "Given massive of numbers with size n,a1...an.Write count of numbers Ak  from  sequence that are satisfying 2^k<Ak<K!";
     }
 }

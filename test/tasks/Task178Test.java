@@ -4,7 +4,6 @@ import home.utils.ConsoleReader;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import tasks.Task178;
 
 import java.util.Arrays;
 
@@ -18,7 +17,7 @@ import static org.testng.Assert.assertTrue;
 public class Task178Test {
 
     private ConsoleReader consoleReader;
-    private Task178 task178;
+    private Task178d task178d;
 
     int[] dataArray;
 
@@ -26,7 +25,7 @@ public class Task178Test {
     @BeforeClass
     public void setUp() {
         consoleReader = new ConsoleReader();
-        task178 = new Task178();
+        task178d = new Task178d();
         dataArray = new int[]{12, 15, 24, 21, 46};
     }
 
@@ -40,7 +39,7 @@ public class Task178Test {
     @Test(dataProvider = "factorialValidDataProvider")
     public void testFactorialValid(int argument, int expResult) {
 
-        int actualResult = Task178.fact(argument);
+        int actualResult = Task178d.fact(argument);
 
         assertEquals(expResult, actualResult);
 
@@ -58,7 +57,7 @@ public class Task178Test {
     public void testFactorialThrowsException(Integer[] arguments) {
 
         for (int singleArgument : arguments) {
-            Task178.fact(singleArgument);
+            Task178d.fact(singleArgument);
         }
     }
 
@@ -104,25 +103,18 @@ public class Task178Test {
                 {new MyDataObject(dataArray, 3, 21)}};
     }
 
-    @Test(dataProvider = "dataObjectProvider")
-    public void testFirstMethod(MyDataObject myDataObject) {
-
-        int actualResult = Task178.first(myDataObject.getDataArray(), myDataObject.getCount());
-        assertEquals(myDataObject.getResult(), actualResult);
-
-    }
 
 
     @Test
     public void testReadTaskNumber() {
-        String taskNumber = task178.getTaskNumber();
+        String taskNumber = task178d.getTaskNumber();
         assertEquals("178", taskNumber);
 
     }
 
     @Test
     public void taskReadTaskCondition() {
-        String taskCondition = task178.getTaskCondition();
+        String taskCondition = task178d.getTaskCondition();
         assertTrue(taskCondition.contains("Определить количесво членов Ak последовательности"));
     }
 
