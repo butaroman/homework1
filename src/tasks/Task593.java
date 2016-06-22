@@ -3,7 +3,6 @@ package tasks;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
 import home.utils.AbstractTask;
 
 public class Task593 extends AbstractTask {

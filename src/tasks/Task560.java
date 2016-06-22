@@ -2,7 +2,6 @@ package tasks;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import home.utils.AbstractTask;
 
 /**
