@@ -1,7 +1,10 @@
 package tasks;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
+
 import home.utils.AbstractTask;
 
 /**
@@ -29,7 +32,7 @@ public class Task323 extends AbstractTask {
 		return "Given a natural number n. Get all the natural numbers less than n and relatively prime to it.";
 	}
 
-	public ArrayList<Integer> calc(int n) {
+	ArrayList<Integer> calc(int n) {
 		if (n < 0) {
 			throw new IllegalArgumentException("Invalid parameter, n must be positive.");
 		}
@@ -43,7 +46,9 @@ public class Task323 extends AbstractTask {
 	}
 
 	private boolean isPrime(int n) {
-		if (n % 2 == 0) {
+		if (n == 2) {
+			return true;
+		} else if (n % 2 == 0) {
 			return false;
 		}
 		for (int i = 3; i * i <= n; i += 2) {
