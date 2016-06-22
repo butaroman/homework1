@@ -6,23 +6,18 @@ import java.util.Random;
 import java.util.Scanner;
 
 /**
- * This class is resolving my first task in book,task number is 178.
- *
- * @author cavayman
+ * Created by cavayman on 21.06.2016.
  */
-public class Task178 extends AbstractTask {
+public class Task178d extends AbstractTask {
 
     // variables
     private static Random rand = new Random();
     private static int[] mas;
     private static Scanner scan = new Scanner(System.in);
-    private static int firstCounter = 0;
     private static int secondCounter = 0;
 
-    /**
-     * Main method that fills massive and scanns that user enters.
-     */
-    public String solution() {
+    @Override
+    public String solution() throws Exception {
         System.out.println("Enter quantity of numbers in massive:");
         int sizeOfMassive = scan.nextInt();
         mas = new int[sizeOfMassive];
@@ -30,43 +25,13 @@ public class Task178 extends AbstractTask {
 
         for (int i = 0; i < mas.length; i++) { // setting state of massive.
             mas[i] = rand.nextInt(50);
+
             System.out.print(mas[i] + " ");
         }
-        System.out.println();
-        System.out.println("first:");
-        for (int i = 0; i < mas.length; i++) {
-            first(mas, i);
-        }
-        System.out.println("FirstCounter=" + firstCounter);
-        System.out.println("Second:");
-
         for (int i = 0; i < mas.length; i++) {
             second(mas, i);
         }
-        System.out.println("SecondCounter=" + secondCounter);
-        return "Це відповіді на Г та Д завдання";
-
-    }
-
-    /**
-     * Method is resolving first task 178(G) counts numbers that ( Ak<((Ak-1 +
-     * Ak+1)/2).
-     *
-     * @param temp
-     * @param iterationCount
-     */
-    public static int first(int[] temp, int iterationCount) {
-        if (iterationCount > 0) {
-            if (iterationCount < temp.length - 1) {
-                if (temp[iterationCount] < ((temp[iterationCount - 1] + temp[iterationCount + 1]) / 2)) {
-                    System.out.print(temp[iterationCount] + " ");
-                    firstCounter++;
-                    return temp[iterationCount];
-                }
-            }
-
-        }
-        return 0;
+        return "Count="+secondCounter;
     }
 
     /**
@@ -94,21 +59,16 @@ public class Task178 extends AbstractTask {
      * @return an factorial number.
      */
     public static int fact(int num) {
-        if (num < 0) {
-            throw new IllegalArgumentException("not a positive number");
-        }
         return (num == 0) ? 1 : num * fact(num - 1);
     }
 
     @Override
     public String getTaskNumber() {
-        // TODO Auto-generated method stub
-        return "178";
+        return "178d";
     }
 
     @Override
     public String getTaskCondition() {
-        // TODO Auto-generated method stub
-        return "Даны натуральные числа n,a1,...,an.\n Определить количесво членов Ak последовательности.";
+        return "Given massive of numbers with size n,a1...an.Write count of numbers Ak  from  sequence that are satisfying 2^k<Ak<K!";
     }
 }
