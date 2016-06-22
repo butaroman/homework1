@@ -2,8 +2,6 @@ package tasks;
 
 import home.utils.AbstractTask;
 
-import java.io.IOException;
-
 /**
  * TASK: Find integer from 1 to 10,000
  * with the maximum sum of divisors.
