@@ -106,7 +106,6 @@ public class Task88a extends AbstractTask {
         return number;
     }
 
-    @Override
     public String toString() {
         return "Task88a{"
                 + "n=" + number
