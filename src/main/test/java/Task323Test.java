@@ -18,6 +18,6 @@ public class Task323Test {
     @Test
     public void testCalc() {
        ArrayList<Integer> result = task323.calc(5);
-       assertEquals("[1, 3]", result.toString());
+       assertEquals("[1, 2, 3]", result.toString());
     }
 }

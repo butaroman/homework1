@@ -26,12 +26,12 @@ public class Task207Test {
 				+ "digits 0 and 5, leaving the rest of the same order of digits. "
 				+ "For example, from number 59015509 should have 919.", output);
 	}
-	@org.junit.Test
-	public void testForSolution() throws Exception{
-		String output = task.solution();
-		assertEquals("919", output);
-		
-	}
-	
+//	@org.junit.Test
+//	public void testForSolution() throws Exception{
+//		String output = task.solution();
+//		assertEquals("919", output);
+//
+//	}
+//
 
 }
